@@ -33,14 +33,14 @@ contract Escrow {
         nftAddress = _nftAddress;
     }
 
-    function deposit() public payable {
-        require(msg.sender == buyer, "Only buyer can deposit");
-        require(msg.value == price, "Incorrect deposit amount");
-    }
+    // function deposit() public payable {
+    //     require(msg.sender == buyer, "Only buyer can deposit");
+    //     require(msg.value == price, "Incorrect deposit amount");
+    // }
 
-    function release() public {
-        require(msg.sender == buyer, "Only buyer can release funds");
-        IERC721(realEstateContract).transferFrom(seller, buyer, tokenId);
-        payable(seller).transfer(price);
-    }
+    // function release() public {
+    //     require(msg.sender == buyer, "Only buyer can release funds");
+    //     IERC721(realEstateContract).transferFrom(seller, buyer, tokenId);
+    //     payable(seller).transfer(price);
+    // }
 }
